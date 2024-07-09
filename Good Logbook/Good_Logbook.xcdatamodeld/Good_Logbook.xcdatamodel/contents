@@ -9,5 +9,11 @@
         <attribute name="flightNumbers" optional="YES" attributeType="String"/>
         <attribute name="picName" optional="YES" attributeType="String"/>
         <attribute name="sicName" optional="YES" attributeType="String"/>
+        <relationship name="pairing" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pairing" inverseName="flights" inverseEntity="Pairing"/>
+    </entity>
+    <entity name="Pairing" representedClassName="Pairing" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="flightNumbers" optional="YES" attributeType="String"/>
+        <relationship name="flights" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flight" inverseName="pairing" inverseEntity="Flight"/>
     </entity>
 </model>

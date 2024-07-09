@@ -14,13 +14,19 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newFlight = Flight(context: viewContext)
-                       newFlight.aircraft = "Boeing 737"
-                       newFlight.aircraftRegistration = "HZ-ABC"
-                       newFlight.date = Date()
-                       newFlight.flightNumbers = "123 124 126 128"
-                       newFlight.picName = "John Doe"
-                       newFlight.sicName = "Harry Smith"
+            let newPairing = Pairing(context: viewContext)
+            newPairing.date = Date()
+            newPairing.flightNumbers = "123 124 126 128"
+            for flightNumber in newPairing.flightNumbers!.split(separator: " ") {
+                let newFlight = Flight(context: viewContext)
+                newFlight.aircraft = "Boeing 737"
+                newFlight.aircraftRegistration = "HZ-ABC"
+                newFlight.date = newPairing.date
+                newFlight.flightNumbers = String(flightNumber)
+                newFlight.picName = "John Doe"
+                newFlight.sicName = "Harry Smith"
+                newFlight.pairing = newPairing
+            }
         }
         do {
             try viewContext.save()
@@ -34,7 +40,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "Flight")
+        container = NSPersistentContainer(name: "Good_Logbook")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }

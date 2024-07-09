@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+
 extension Flight {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Flight> {
@@ -21,8 +22,10 @@ extension Flight {
     @NSManaged public var flightNumbers: String?
     @NSManaged public var picName: String?
     @NSManaged public var sicName: String?
+    @NSManaged public var pairing: Pairing?
 }
 
-extension Flight: Identifiable {
+extension Flight : Identifiable {
 
 }
+

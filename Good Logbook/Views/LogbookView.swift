@@ -10,65 +10,44 @@ import CoreData
 
 struct LogbookView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Flight.date, ascending: true)],
-        animation: .default)
-    private var flights: FetchedResults<Flight>
-    
+        entity: Pairing.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Pairing.date, ascending: true)]
+    ) private var pairings: FetchedResults<Pairing>
+
     var body: some View {
         NavigationView {
             List {
-                ForEach(flights) { flight in
-                    NavigationLink(destination: FlightDetailView(flight: flight)) {
-                        Text(flight.flightNumbers ?? "Unknown Flight Numbers")
+                ForEach(pairings) { pairing in
+                    Section(header: Text("Pairing \(pairing.date ?? Date(), formatter: dateFormatter)")) {
+                        ForEach(pairing.flightsArray) { flight in
+                            NavigationLink(destination: FlightDetailView(flight: flight)) {
+                                VStack(alignment: .leading) {
+                                    Text("Flight Number: \(flight.flightNumbers ?? "")")
+                                    Text("Date: \(flight.date ?? Date(), formatter: dateFormatter)")
+                                }
+                            }
+                        }
                     }
                 }
-                .onDelete(perform: deleteFlights)
             }
             .navigationTitle("Logbook")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: addFlight) {
+                    Button(action: {
+                        // Action to add new flight
+                    }) {
                         Label("Add Flight", systemImage: "plus")
                     }
                 }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    EditButton()
-                }
-            }
-        }
-    }
-    
-    private func addFlight() {
-        withAnimation {
-            let newFlight = Flight(context: viewContext)
-            newFlight.date = Date()
-            newFlight.aircraft = "Airbus A320"
-            newFlight.flightNumbers = "AB123"
-            newFlight.picName = "John Doe"
-            newFlight.sicName = "Jane Smith"
-            newFlight.aircraftRegistration = "N12345"
-            
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteFlights(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { flights[$0] }.forEach(viewContext.delete)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
 }
+
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .none
+    return formatter
+}()

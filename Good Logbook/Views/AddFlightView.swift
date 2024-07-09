@@ -18,20 +18,23 @@ struct AddFlightView: View {
     @State private var picName: String = ""
     @State private var sicName: String = ""
 
-    private func addFlight() {
-        let newFlight = Flight(context: viewContext)
-        newFlight.date = date
-        newFlight.aircraft = aircraft
-        newFlight.flightNumbers = flightNumbers
-        newFlight.picName = picName
-        newFlight.sicName = sicName
-        newFlight.aircraftRegistration = aircraftRegistration
+    private func addFlights() {
+        let flightNumberArray = flightNumbers.split(separator: " ").map { String($0) }
+
+        for flightNumber in flightNumberArray {
+            let newFlight = Flight(context: viewContext)
+            newFlight.aircraft = aircraft
+            newFlight.aircraftRegistration = aircraftRegistration
+            newFlight.date = date
+            newFlight.flightNumbers = flightNumber
+            newFlight.picName = picName
+            newFlight.sicName = sicName
+        }
 
         do {
             try viewContext.save()
             presentationMode.wrappedValue.dismiss()
         } catch {
-            // Handle the Core Data error here
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
@@ -41,17 +44,23 @@ struct AddFlightView: View {
         NavigationView {
             Form {
                 Section(header: Text("Flight Details")) {
+                    DatePicker("Date", selection: $date, displayedComponents: .date)
                     TextField("Aircraft", text: $aircraft)
                     TextField("Aircraft Registration", text: $aircraftRegistration)
-                    DatePicker("Date", selection: $date, displayedComponents: .date)
-                    TextField("Flight Number", text: $flightNumbers)
+                    TextField("Flight Numbers (separated by space)", text: $flightNumbers)
                     TextField("PIC Name", text: $picName)
                     TextField("SIC Name", text: $sicName)
                 }
+
+                Section {
+                    Button(action: addFlights) {
+                        Text("Add Flights")
+                    }
+                }
             }
-            .navigationTitle("Add Flight")
-            .navigationBarItems(trailing: Button("Save") {
-                addFlight()
+            .navigationBarTitle("Add Flights", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Cancel") {
+                presentationMode.wrappedValue.dismiss()
             })
         }
     }
