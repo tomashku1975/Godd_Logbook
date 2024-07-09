@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Flight" representedClassName="Flight" syncable="YES">
+        <attribute name="aircraft" optional="YES" attributeType="String"/>
+        <attribute name="aircraftRegistration" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="destination" optional="YES" attributeType="String"/>
+        <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="flightNumbers" optional="YES" attributeType="String"/>
+        <attribute name="picName" optional="YES" attributeType="String"/>
+        <attribute name="sicName" optional="YES" attributeType="String"/>
+    </entity>
+</model>

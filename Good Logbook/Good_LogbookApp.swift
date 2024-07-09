@@ -7,13 +7,15 @@
 
 import SwiftUI
 
+import SwiftUI
+
 @main
-struct Good_LogbookApp: App {
+struct LogbookApp: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Navigation()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

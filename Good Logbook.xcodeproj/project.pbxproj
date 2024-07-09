@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF04164C2C3D9C7600F5FC19 /* Flight+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF04164A2C3D9C7600F5FC19 /* Flight+CoreDataClass.swift */; };
+		EF04164D2C3D9C7600F5FC19 /* Flight+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF04164B2C3D9C7600F5FC19 /* Flight+CoreDataProperties.swift */; };
 		EF62CCA52C3D785E0023C1A6 /* Good_LogbookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62CCA42C3D785E0023C1A6 /* Good_LogbookApp.swift */; };
 		EF62CCA72C3D785E0023C1A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62CCA62C3D785E0023C1A6 /* ContentView.swift */; };
 		EF62CCA92C3D78600023C1A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF62CCA82C3D78600023C1A6 /* Assets.xcassets */; };
 		EF62CCAC2C3D78600023C1A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF62CCAB2C3D78600023C1A6 /* Preview Assets.xcassets */; };
 		EF62CCAE2C3D78600023C1A6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62CCAD2C3D78600023C1A6 /* Persistence.swift */; };
-		EF62CCB12C3D78600023C1A6 /* Good_Logbook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF62CCAF2C3D78600023C1A6 /* Good_Logbook.xcdatamodeld */; };
+		EF62CCB12C3D78600023C1A6 /* Flight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF62CCAF2C3D78600023C1A6 /* Flight.xcdatamodeld */; };
 		EF62CCBB2C3D78600023C1A6 /* Good_LogbookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62CCBA2C3D78600023C1A6 /* Good_LogbookTests.swift */; };
 		EF62CCC52C3D78600023C1A6 /* Good_LogbookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62CCC42C3D78600023C1A6 /* Good_LogbookUITests.swift */; };
 		EF62CCC72C3D78600023C1A6 /* Good_LogbookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62CCC62C3D78600023C1A6 /* Good_LogbookUITestsLaunchTests.swift */; };
+		EF62CCD42C3D78C10023C1A6 /* FlightDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62CCD32C3D78C10023C1A6 /* FlightDetailView.swift */; };
+		EFEE19542C3D873400CAFF1A /* LogbookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE19532C3D873400CAFF1A /* LogbookView.swift */; };
+		EFEE19562C3D874A00CAFF1A /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE19552C3D874A00CAFF1A /* StatisticsView.swift */; };
+		EFEE19582C3D875800CAFF1A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE19572C3D875800CAFF1A /* SettingsView.swift */; };
+		EFEE195B2C3D882200CAFF1A /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE195A2C3D882200CAFF1A /* Navigation.swift */; };
+		EFEE195D2C3D890100CAFF1A /* AddFlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE195C2C3D890000CAFF1A /* AddFlightView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF04164A2C3D9C7600F5FC19 /* Flight+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flight+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EF04164B2C3D9C7600F5FC19 /* Flight+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flight+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EF62CCA12C3D785E0023C1A6 /* Good Logbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Logbook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF62CCA42C3D785E0023C1A6 /* Good_LogbookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Good_LogbookApp.swift; sourceTree = "<group>"; };
 		EF62CCA62C3D785E0023C1A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +58,12 @@
 		EF62CCC02C3D78600023C1A6 /* Good LogbookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Good LogbookUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF62CCC42C3D78600023C1A6 /* Good_LogbookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Good_LogbookUITests.swift; sourceTree = "<group>"; };
 		EF62CCC62C3D78600023C1A6 /* Good_LogbookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Good_LogbookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EF62CCD32C3D78C10023C1A6 /* FlightDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailView.swift; sourceTree = "<group>"; };
+		EFEE19532C3D873400CAFF1A /* LogbookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogbookView.swift; sourceTree = "<group>"; };
+		EFEE19552C3D874A00CAFF1A /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		EFEE19572C3D875800CAFF1A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EFEE195A2C3D882200CAFF1A /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		EFEE195C2C3D890000CAFF1A /* AddFlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlightView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +94,8 @@
 		EF62CC982C3D785E0023C1A6 = {
 			isa = PBXGroup;
 			children = (
+				EF04164A2C3D9C7600F5FC19 /* Flight+CoreDataClass.swift */,
+				EF04164B2C3D9C7600F5FC19 /* Flight+CoreDataProperties.swift */,
 				EF62CCA32C3D785E0023C1A6 /* Good Logbook */,
 				EF62CCB92C3D78600023C1A6 /* Good LogbookTests */,
 				EF62CCC32C3D78600023C1A6 /* Good LogbookUITests */,
@@ -100,9 +118,10 @@
 			children = (
 				EF62CCA42C3D785E0023C1A6 /* Good_LogbookApp.swift */,
 				EF62CCA62C3D785E0023C1A6 /* ContentView.swift */,
+				EFEE19592C3D876000CAFF1A /* Views */,
 				EF62CCA82C3D78600023C1A6 /* Assets.xcassets */,
 				EF62CCAD2C3D78600023C1A6 /* Persistence.swift */,
-				EF62CCAF2C3D78600023C1A6 /* Good_Logbook.xcdatamodeld */,
+				EF62CCAF2C3D78600023C1A6 /* Flight.xcdatamodeld */,
 				EF62CCAA2C3D78600023C1A6 /* Preview Content */,
 			);
 			path = "Good Logbook";
@@ -131,6 +150,19 @@
 				EF62CCC62C3D78600023C1A6 /* Good_LogbookUITestsLaunchTests.swift */,
 			);
 			path = "Good LogbookUITests";
+			sourceTree = "<group>";
+		};
+		EFEE19592C3D876000CAFF1A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EFEE195C2C3D890000CAFF1A /* AddFlightView.swift */,
+				EF62CCD32C3D78C10023C1A6 /* FlightDetailView.swift */,
+				EFEE19532C3D873400CAFF1A /* LogbookView.swift */,
+				EFEE195A2C3D882200CAFF1A /* Navigation.swift */,
+				EFEE19552C3D874A00CAFF1A /* StatisticsView.swift */,
+				EFEE19572C3D875800CAFF1A /* SettingsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +295,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFEE195D2C3D890100CAFF1A /* AddFlightView.swift in Sources */,
 				EF62CCAE2C3D78600023C1A6 /* Persistence.swift in Sources */,
+				EFEE19582C3D875800CAFF1A /* SettingsView.swift in Sources */,
 				EF62CCA72C3D785E0023C1A6 /* ContentView.swift in Sources */,
-				EF62CCB12C3D78600023C1A6 /* Good_Logbook.xcdatamodeld in Sources */,
+				EF04164C2C3D9C7600F5FC19 /* Flight+CoreDataClass.swift in Sources */,
+				EF04164D2C3D9C7600F5FC19 /* Flight+CoreDataProperties.swift in Sources */,
+				EF62CCB12C3D78600023C1A6 /* Flight.xcdatamodeld in Sources */,
+				EFEE19562C3D874A00CAFF1A /* StatisticsView.swift in Sources */,
+				EF62CCD42C3D78C10023C1A6 /* FlightDetailView.swift in Sources */,
+				EFEE195B2C3D882200CAFF1A /* Navigation.swift in Sources */,
+				EFEE19542C3D873400CAFF1A /* LogbookView.swift in Sources */,
 				EF62CCA52C3D785E0023C1A6 /* Good_LogbookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,13 +638,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		EF62CCAF2C3D78600023C1A6 /* Good_Logbook.xcdatamodeld */ = {
+		EF62CCAF2C3D78600023C1A6 /* Flight.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				EF62CCB02C3D78600023C1A6 /* Good_Logbook.xcdatamodel */,
 			);
 			currentVersion = EF62CCB02C3D78600023C1A6 /* Good_Logbook.xcdatamodel */;
-			path = Good_Logbook.xcdatamodeld;
+			path = Flight.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
